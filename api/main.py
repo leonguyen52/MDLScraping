@@ -1,14 +1,17 @@
-from fastapi import FastAPI, Response, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.templating import Jinja2Templates
 from typing import Dict, Any
+
+from fastapi import FastAPI, Response
+from fastapi.middleware.cors import CORSMiddleware
 
 # bypassing cloudflare anti-bot
 import cloudscraper
 
 from api.utils import search_func, fetch_func
 
+
 app = FastAPI()
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -17,12 +20,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-templates = Jinja2Templates(directory="templates")
-
 @app.get("/")
-async def index(request: Request) -> str:
-    return templates.TemplateResponse("index.html", {"request": request})
-
+async def index() -> str:
+    return """A MDL Scraper API - Powered by Lukobi Inc.
+———————————————————————
+How to use:
+- Search for dramas: https://mdl.lukobi.com/search/q/{yourquery}
+- Get DRAMA Info: https://mdl.lukobi.com/id/{mydramalist-slug}
+- Get DRAMA Cast: https://mdl.lukobi.com/id/{mydramalist-slug}/cast
+- Get DRAMA Reviews: https://mdl.lukobi.com/id/{mydramalist-slug}/reviews
+- Get Person(People) Info: https://mdl.lukobi.com/people/{people-id}
+- Get seasonal drama: https://mdl.lukobi.com/seasonal/{year}/{quarter}"""
 
 @app.get("/search/q/{query}")
 async def search(query: str, response: Response) -> Dict[str, Any]:
