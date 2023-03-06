@@ -31,12 +31,6 @@ class FetchDrama(BaseFetch):
         self.info["poster"] = self._get_poster(container)
 
         # SYNOPSIS
-        #self.info["synopsis"] = (
-        #    container.find("div", class_="show-synopsis")
-        #    .find("span")
-        #    .text.replace("\n", " ")
-        #)
-        # SYNOPSIS
         synopsis = container.find("div", class_="show-synopsis").find("span")
         self.info["synopsis"] = synopsis.text.replace("\n", " ") if synopsis else "No synopsis available"
 
