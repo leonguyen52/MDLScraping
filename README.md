@@ -1,5 +1,6 @@
 <div align="center">
-  <h1>kuryana</h1>
+  <h1>Original Work by kuryana</h1>
+  <h1>Modified to match personal purposes</h1>
 
   <p>A simple MyDramaList.com scraper api.</p>
   <p>This scrapes on the go so it might be slow.</p>
@@ -14,40 +15,40 @@
 
 ## API Use
 
-- [Search for dramas](https://kuryana.vercel.app/search/q/)
+- [Search for dramas](https://my-domain.com/search/q/)
 
 ```
-https://kuryana.vercel.app/search/q/{yourquery}
+https://my-domain.com/search/q/{yourquery}
 ```
 
-- [Get DRAMA Info](https://kuryana.vercel.app/id/)
+- [Get DRAMA Info](https://my-domain.com/id/)
 
 ```
-https://kuryana.vercel.app/id/{mydramalist-slug}
+https://my-domain.com/id/{mydramalist-slug}
 ```
 
-- [Get DRAMA Cast](https://kuryana.vercel.app/id/{id}/cast)
+- [Get DRAMA Cast](https://my-domain.com/id/{id}/cast)
 
 ```
-https://kuryana.vercel.app/id/{mydramalist-slug}/cast
+https://my-domain.com/id/{mydramalist-slug}/cast
 ```
 
-- [Get DRAMA Reviews](https://kuryana.vercel.app/id/{id}/reviews)
+- [Get DRAMA Reviews](https://my-domain.com/id/{id}/reviews)
 
 ```
-https://kuryana.vercel.app/id/{mydramalist-slug}/reviews
+https://my-domain.com/id/{mydramalist-slug}/reviews
 ```
 
-- [Get Person(People) Info](https://kuryana.vercel.app/people/)
+- [Get Person(People) Info](https://my-domain.com/people/)
 
 ```
-https://kuryana.vercel.app/people/{people-id}
+https://my-domain.com/people/{people-id}
 ```
 
-- [Get seasonal drama](https://kuryana.vercel.app/seasonal/)
+- [Get seasonal drama](https://my-domain.com/seasonal/)
 
 ```
-https://kuryana.vercel.app/seasonal/{year}/{quarter}
+https://my-domain.com/seasonal/{year}/{quarter}
 ```
 
 ## Development
