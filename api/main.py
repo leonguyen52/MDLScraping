@@ -21,8 +21,8 @@ app.add_middleware(
 )
 
 @app.get("/")
-async def index() -> str:
-    return """A MDL Scraper API - Powered by Lukobi Inc.
+async def index() -> Response:
+    content = """A MDL Scraper API - Powered by Lukobi Inc.
 ———————————————————————
 How to use:
 - Search for dramas: https://mdl.lukobi.com/search/q/{yourquery}
@@ -31,6 +31,8 @@ How to use:
 - Get DRAMA Reviews: https://mdl.lukobi.com/id/{mydramalist-slug}/reviews
 - Get Person(People) Info: https://mdl.lukobi.com/people/{people-id}
 - Get seasonal drama: https://mdl.lukobi.com/seasonal/{year}/{quarter}"""
+    headers = {"Content-Type": "text/plain; charset=utf-8"}
+    return Response(content, headers=headers)
 
 @app.get("/search/q/{query}")
 async def search(query: str, response: Response) -> Dict[str, Any]:
