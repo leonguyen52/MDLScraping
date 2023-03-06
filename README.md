@@ -1,12 +1,12 @@
 <div align="center">
   <h1>Original Work by kuryana</h1>
-  <h1>Modified to match personal purposes</h1>
+  <h2>Modified to match personal purposes</h2>
 
   <p>A simple MyDramaList.com scraper api.</p>
   <p>This scrapes on the go so it might be slow.</p>
 
-  <h4>THIS SERVICE IS ONLY CREATED TO SATISFY THE NEED FOR AN API FOR [MYDRAMALIST.COM](https://mydramalist.com). THIS WILL BE STOPPED ONCE AN OFFICIAL API WILL BE RELEASED.</h4>
-
+  <h4>THIS SERVICE IS ONLY CREATED TO SATISFY THE NEED FOR AN API FOR [MYDRAMALIST.COM](https://mydramalist.com).</h4>
+  
 ### Deploy Your Own
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FTheBoringDude%2Fkuryana)
