@@ -89,7 +89,7 @@ class Search(BaseSearch):
 
 
 
-            r["slug"] = title_elem["href"].replace("/", "", 1)
+            r["slug"] = title_elem.find("a").get("href").replace("/", "", 1)
             # get the thumbnail
             _thumb = str(result.find("img", class_="img-responsive")["data-src"]).split(
                 "/1280/"
