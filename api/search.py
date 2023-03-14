@@ -87,9 +87,13 @@ class Search(BaseSearch):
             r = {}
             title = title_elem.text.strip()
 
+            # extract the URL slug
+            url_slug = title_elem.find("a").get("href")
+            if url_slug is not None:
+                r["slug"] = url_slug.replace("/", "", 1)
+            else:
+                continue  # skip this result if URL slug is not found
 
-
-            r["slug"] = title_elem.find("a").get("href").replace("/", "", 1)
             # get the thumbnail
             _thumb = str(result.find("img", class_="img-responsive")["data-src"]).split(
                 "/1280/"
