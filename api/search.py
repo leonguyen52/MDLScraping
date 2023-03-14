@@ -119,7 +119,7 @@ class Search(BaseSearch):
                 continue
 
             # it can only be a person otherwise,
-            r["name"] = title.text.strip()
+            r["name"] = title.strip()
             r["nationality"] = result.find("div", class_="text-muted").text.strip()
             _people.append(r)
 
