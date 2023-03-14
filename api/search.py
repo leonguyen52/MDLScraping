@@ -82,8 +82,9 @@ class Search(BaseSearch):
         for result in results:
             r = {}
 
-            title_elem = result.find("h6", class_="text-primary title").find("a")
-            title = title_elem.text.strip() if title_elem else "This Content Is Not Available on MDL Yet"
+            title_elem = result.find("h6", class_="text-primary title")
+            title = title_elem.text.strip() if title_elem is not None else "This Content Is Not Available on MDL Yet"
+
 
 
             r["slug"] = title["href"].replace("/", "", 1)
