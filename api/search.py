@@ -80,14 +80,16 @@ class Search(BaseSearch):
         _people = []
 
         for result in results:
-            r = {}
-
             title_elem = result.find("h6", class_="text-primary title")
-            title = title_elem.text.strip() if title_elem is not None else "This Content Is Not Available on MDL Yet"
+            if title_elem is None:
+                continue  # skip if title is not found
+
+            r = {}
+            title = title_elem.text.strip()
 
 
 
-            r["slug"] = title["href"].replace("/", "", 1)
+            r["slug"] = title_elem["href"].replace("/", "", 1)
             # get the thumbnail
             _thumb = str(result.find("img", class_="img-responsive")["data-src"]).split(
                 "/1280/"
