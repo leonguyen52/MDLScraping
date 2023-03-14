@@ -107,8 +107,8 @@ class Search(BaseSearch):
                 r["mdl_id"] = result["id"]
 
                 # extract drama title
-                r["title"] = title.text.strip()
-
+                r["title"] = title.strip()
+                
                 # drama ranking
                 r["ranking"] = self._res_get_ranking(result)
 
