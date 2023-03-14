@@ -22,19 +22,20 @@ app.add_middleware(
 
 @app.get("/")
 async def index() -> Response:
-    content = """A MDL Scraper API - Powered by Lukobi Inc.
-—————————————————————————————————————————————————————————————————
+    content = """
+        A MDL Scraper API - Powered by Lukobi Inc.
+——————————————————————————————————————————————————————————————————————————
 Check following templates for supported functions:
-+---------------------+-----------------------------------------+
-| Function            | URL                                     |
-+---------------------+-----------------------------------------+
-| Search for dramas   | https://mdl.lukobi.com/search/q/{query} |
-| Get DRAMA Info      | https://mdl.lukobi.com/id/{slug}        |
-| Get DRAMA Cast      | https://mdl.lukobi.com/id/{slug}/cast   |
-| Get DRAMA Reviews   | https://mdl.lukobi.com/id/{slug}/reviews|
-| Get Person Info     | https://mdl.lukobi.com/people/{id}      |
++---------------------+--------------------------------------------------+
+| Function            |                      URL                         |
++---------------------+--------------------------------------------------+
+| Search for dramas   | https://mdl.lukobi.com/search/q/{query}          |
+| Get DRAMA Info      | https://mdl.lukobi.com/id/{slug}                 |
+| Get DRAMA Cast      | https://mdl.lukobi.com/id/{slug}/cast            |
+| Get DRAMA Reviews   | https://mdl.lukobi.com/id/{slug}/reviews         |
+| Get Person Info     | https://mdl.lukobi.com/people/{id}               |
 | Get Seasonal Drama  | https://mdl.lukobi.com/seasonal/{year}/{quarter} |
-+---------------------+-----------------------------------------+
++---------------------+--------------------------------------------------+
 """
     headers = {"Content-Type": "text/plain; charset=utf-8"}
     return Response(content, headers=headers)
